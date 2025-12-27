@@ -6,8 +6,7 @@ description = "HTTP API server for Storable"
 license = "MIT"
 
 [dependencies]
-storable-core = { path = "../storable-core", version = "0.1.0" }
-storable-db   = { path = "../storable-db",   version = "0.1.0" }
-
-axum = "0.7"
+axum = "0.8.8"
 tokio = { version = "1", features = ["full"] }
+storable-core = { path = "../storable-core" }
+storable-db   = { path = "../storable-db" }
