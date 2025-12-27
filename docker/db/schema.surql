@@ -1,3 +1,7 @@
+USE NAMESPACE storable DATABASE main;
+REMOVE DATABASE main;
+REMOVE NAMESPACE storable;
+
 -- Namespace & DB
 DEFINE NAMESPACE storable;
 DEFINE DATABASE main;
