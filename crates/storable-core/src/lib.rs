@@ -1,4 +1,5 @@
 pub mod auth;
+pub mod errors;
 pub mod fs;
 pub mod metadata;
-pub mod errors;
+pub mod types;
