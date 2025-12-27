@@ -1,0 +1,9 @@
+[package]
+name = "storable-core"
+version = "0.1.0"
+edition = "2021"
+description = "Core domain logic for Storable"
+license = "MIT"
+
+[dependencies]
+thiserror = "1"

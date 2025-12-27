@@ -1,0 +1,8 @@
+[workspace]
+members = [
+    "crates/storable-core",
+    "crates/storable-db",
+    "crates/storable-api",
+    "crates/storable-web",
+]
+resolver = "2"

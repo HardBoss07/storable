@@ -1,0 +1,10 @@
+[package]
+name = "storable-db"
+version = "0.1.0"
+edition = "2021"
+description = "Database abstraction layer for Storable"
+license = "MIT"
+
+[dependencies]
+storable-core = { path = "../storable-core", version = "0.1.0" }
+async-trait = "0.1"
