@@ -3,12 +3,16 @@ services:
     image: surrealdb/surrealdb:latest
     container_name: storable-db
     user: root
-    command: >
-      start
-      --bind 0.0.0.0:8000
-      --user root
-      --pass root
-      memory
+    # Use 'memory' for dev, or 'file:/data/storable.db' for persistence
+    command: 
+      - start
+      - --bind
+      - 0.0.0.0:8000
+      - --user
+      - root
+      - --pass
+      - root
+      - memory
     ports:
       - "8000:8000"
     volumes:
@@ -25,15 +29,18 @@ services:
       dockerfile: docker/api/Dockerfile
     container_name: storable-api
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     environment:
-      SURREAL_URL: http://db:8000
+      # We use 'db' because that is the service name in this docker network
+      SURREAL_URL: ws://db:8000 
       SURREAL_USER: root
       SURREAL_PASS: root
       SURREAL_NS: storable
       SURREAL_DB: main
     ports:
       - "8080:8080"
+    restart: on-failure
 
   web:
     build:
@@ -42,5 +49,10 @@ services:
     container_name: storable-web
     depends_on:
       - api
+    environment:
+      # This tells the frontend where the API lives
+      # Note: Browser-side calls use the HOST IP, not the Docker name
+      BACKEND_URL: http://localhost:8080
     ports:
       - "3000:3000"
+    restart: on-failure
