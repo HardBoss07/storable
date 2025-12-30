@@ -1,42 +1,48 @@
 # Project Structure
 
 ```
-storable/                # repo root
-├── Cargo.toml            # workspace
+storable/                  # repo root
+├── Cargo.toml              # workspace
 ├── README.md
 ├── LICENSE
-├── docker/
-│   ├── Dockerfile
-│   └── docker-compose.yml
+├── docker-compose.yml
 ├── crates/
-│   ├── storable-core/   # domain logic (publishable)
+│   ├── storable-core/      # domain logic (publishable)
 │   │   ├── Cargo.toml
 │   │   └── src/
 │   │       ├── lib.rs
 │   │       ├── auth.rs
 │   │       ├── fs.rs
 │   │       ├── metadata.rs
-│   │       └── errors.rs
+│   │       ├── errors.rs
+│   │       └── types.rs
 │   │
-│   ├── storable-db/     # DB abstraction (publishable)
+│   ├── storable-db/        # DB abstraction (publishable)
 │   │   ├── Cargo.toml
 │   │   └── src/
 │   │       ├── lib.rs
 │   │       ├── models.rs
-│   │       └── repo.rs
+│   │       └── repositories.rs
 │   │
-│   ├── storable-api/    # HTTP API (publishable)
+│   ├── storable-api/       # HTTP API (publishable)
 │   │   ├── Cargo.toml
 │   │   └── src/
 │   │       ├── main.rs
-│   │       ├── routes/
-│   │       └── middleware.rs
+│   │       └── services.rs
 │   │
-│   └── storable-web/    # Dioxus frontend (not published)
+│   └── storable-web/       # Dioxus frontend (not published)
 │       ├── Cargo.toml
 │       └── src/
 │           └── main.rs
 │
-└── scripts/
-    └── init.sh
+├── db/
+│   └── schema.surql
+│
+└── docker/
+    ├── db/
+    │   └── schema.surql
+    ├── api/
+    │   └── Dockerfile
+    └── web/
+        └── Dockerfile
 ```
