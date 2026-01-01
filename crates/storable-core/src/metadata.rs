@@ -1,7 +1,8 @@
 use crate::types::{FileId, UserId};
+use serde::{Deserialize, Serialize};
 use std::time::SystemTime;
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct FileMetadata {
     pub id: FileId,
     pub owner: UserId,

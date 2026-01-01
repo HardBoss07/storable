@@ -1,7 +1,7 @@
 [package]
 name = "storable-core"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 description = "Core domain logic for Storable"
 license = "MIT"
 
@@ -9,3 +9,4 @@ license = "MIT"
 thiserror = "2.0.17"
 tokio = { version = "1", features = ["full"] }
 async-trait = "0.1"
+serde = { version = "1.0", features = ["derive"] }
