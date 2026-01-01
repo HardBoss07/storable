@@ -1,7 +1,7 @@
 [package]
 name = "storable-api"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 description = "HTTP API server for Storable"
 license = "MIT"
 
@@ -10,3 +10,6 @@ axum = "0.8.8"
 tokio = { version = "1", features = ["full"] }
 storable-core = { path = "../storable-core" }
 storable-db   = { path = "../storable-db" }
+async-trait = "0.1.89"
+surrealdb = "2.4.0"
+serde = { version = "1.0", features = ["derive"] }
