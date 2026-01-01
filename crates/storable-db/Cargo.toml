@@ -1,10 +1,12 @@
 [package]
 name = "storable-db"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 description = "Database abstraction layer for Storable"
 license = "MIT"
 
 [dependencies]
 storable-core = { path = "../storable-core", version = "0.1.0" }
 async-trait = "0.1"
+surrealdb = "2.4.0"
+serde = { version = "1.0", features = ["derive"] }
