@@ -1,6 +1,7 @@
 # 🌌 Project Context: Storable
 
 > **Mission:** A private, high-performance cloud storage and file-sharing service built entirely in Rust.
+> **INCLUDE:** This is a file for more detailed information regarding the dioxus framework. [crates\storable-web\AGENTS.md](crates\storable-web\AGENTS.md)
 
 ## 1. 🏗️ Architecture Overview
 
