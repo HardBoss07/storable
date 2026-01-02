@@ -1,0 +1,9 @@
+# Ignore the rust build artifacts directory
+target/
+
+# Ignore the git directory
+.git/
+
+# Ignore IDE-specific directories
+.vscode/
+.idea/
